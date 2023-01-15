@@ -77,8 +77,8 @@ const yearsUntilRetirement = function (birthYeah, firstName) {
     return -1;
   }
 }
-console.log(yearsUntilRetirement(1991, 'Jonas'));
-console.log(yearsUntilRetirement(1950, 'Mike'));
+console.log(yearsUntilRetirement(1991, 'Jatin'));
+console.log(yearsUntilRetirement(1950, 'raju'));
 */
 
 //////////////////////////////////////
