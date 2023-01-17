@@ -1,0 +1,89 @@
+/*
+//data types(2)
+let javascriptIsFun = true;
+console.log(javascriptIsFun);
+
+//console.log(typeof true);
+console.log(typeof javascriptIsFun);
+
+//console.log(typeof 23);
+//console.log(typeof 'jatin');
+
+javascriptIsFun = 'YES!';       //example of dynamic typing
+console.log(typeof javascriptIsFun);//example of dynamic typing
+//output m string show hoga boolean ki jagah (kyuki apan n javascriptIsFun = yes karke (string bnadiya))
+
+
+//example of undefined
+let year;
+console.log(year);
+console.log(typeof year); //op-undefined
+
+year = 1992;
+console.log(typeof year);   // op - number (dynamic typing)
+
+//note
+console.log(typeof null);   //op- object (this is bug in javascript)
+
+
+// let,const and var(3)
+
+// 1) let-we  use the let keyword to declare variables that can change later so basically during the excecution of our program
+//so when we need to mutate a variable  thats the perfect use case for using let
+  let age = 30;
+  age = 31;
+
+
+  //2)const-use to declare varibales that are not supposed to change or it created immutable varibale
+  const birthyear = 2002;
+  // birthyear = 2000;
+
+//now the fact that varibales created with const are immutable also means that we cannot declare empty const varibles.
+// const job;      //op- error message which means we need basically an initial value.
+
+//3) var - this one should actually be completly avoided
+//var is basically an old way of defining varibles.
+ var job = 'cook'
+ job = 'teacher'
+
+//Some Basic operators in JavaScript(4)
+ // an operator basically allows us to transform values or combine  mulitple values and really do all kinds of work with values.
+
+  // 1) mathematical or arithmetic operators
+
+  const now = 2037;
+  const ageJatin = now - 2000;     //aese use karna hota h variable
+  const ageZoro = now - 2002;
+  console.log(ageJatin, ageZoro)
+
+  console.log(ageJatin * 2, ageJatin / 10, 2 ** 3)  //2 ** 3 means 2 to the power of 3  = 2 * 2 * 2
+
+   const  firstName = 'jatin';
+   const lastName = 'sharma'
+   console.log(firstName + ' ' + lastName);   // ' ' (dono k bich space k liye).
+
+  //note- typeof operator bhi hota jo already upar dekhliya h ,so lets move on to next category
+
+  //Assigment operators(=)
+  let x = 10 + 5;  // x = 15
+  x += 10;        // x = x + 10   which is 25
+  x *= 4; // x = x * 4= 100
+  x++; // x = x+1
+  x--; // x-1
+  console.log(x);
+
+  //comparison operators  <,>,>= , <=
+  // use to produce boolean values
+  console.log(ageJatin > ageZoro);     //reply m yes(turu) pr noi(false) nd this can be very useful when we start taking decisions with our code based on conditions like this
+  console.log(ageZoro >= 18);
+  //now keep in mind in real development we would actually store these results here.we would store these results in variables nd not just always lock the results to consoles.
+  console.log(now - 2000 > now - 2002);
+
+//Q - why these two substractions here are excecuted before this comparison operator?
+const now = 2037;
+const ageJatin = now - 2000;
+const ageZoro = now - 2002;
+
+console.log(now - 2000 > now - 2002);
+ // beacuse JavaScript has a well-defined order of operator precedence.google crow table
+  */
