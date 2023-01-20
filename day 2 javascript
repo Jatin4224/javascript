@@ -87,3 +87,49 @@ const ageZoro = now - 2002;
 console.log(now - 2000 > now - 2002);
  // beacuse JavaScript has a well-defined order of operator precedence.google crow table
   */
+
+  //Strings and template literals(6)
+
+  const firstName = 'jatin';
+  const job = 'programmer';
+  const birthYear = 2000;
+  const year = 2020;
+  const jatin = "I'm" + firstName + ', a ' + (year - birthYear) + 'years old ' + job + '!';
+  console.log(jatin)
+//now for a complex string like this one,this kind can be kind of a pain.nd so thats why starting with ESxi,WE HAVE A MUCH BETTER TOOL FOR DOING this kind of stuff called "TEMPLATE LITERALS"
+//so with template literals,we can write a string in a more normal way,nd then basically insert the variables directly into the string and then they will simply be replaced.
+//IMP NOTE-(``)backist(tab key up )use karna padte h template string use karne k liye single or double quotes se idhar kaam nahi chalta
+const jatinNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
+console.log(jatinNew);
+//we can use backist for any irregular string.for example
+console.log(`what makes you beautiful...`);
+//another great use case of template literals is to create multiline Strings
+console.log('string with \n\
+multiple \n\
+lines');            //normal method  (\n\-dusri line m jump karne k lye use hota h js m )
+
+console.log(`String with
+  multiple
+  lines`);
+
+ //if / else Statements
+
+// const birthYear = 2002;
+// if(birthYear <= 2000){
+//   let century = 20;   //code block-any variable we can declare in this blocks cannot be accessible outside of the block
+// } else {
+//let century = 21; //codeblock
+//}
+//  console.log(century);
+  //op-error
+
+//we have to define century outside
+let century;
+const birthYear = 2002;
+if(birthYear <= 2000){
+  century = 20;
+} else {
+  century = 21;
+}
+  console.log(century);
+  */
