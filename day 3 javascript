@@ -1,73 +1,137 @@
-/ Type Conversion and Coercion
-// type conversion
-const inputYear = '1991';
+//8)Type conversion
+// type conversion is when we manuaaly convert from one type to another on the other hand type coercion is hwen js automatically convert types behind the scenes
+
+const inputYear = '2000';
 console.log(Number(inputYear), inputYear);
-console.log(Number(inputYear) + 18);
-console.log(Number('Jatin'));
-console.log(typeof NaN);
-console.log(String(23), 23);
-// type coercion
-console.log('I am ' + 23 + ' years old');
-console.log('23' - '10' - 3);
+console.log(inputYear + 18);
+
+console.log(Number('jatin'));  //CONVERTING STRINGS TO NUMBER  OP-NAN
+console.log(typeof NaN);    //NAN-NOT A NUMBER
+
+console.log(String(23), 23); //whenever the value is white in output means it is string
+//JavaScript can only convert to 3 types. (number,string nd boolean)
+
+//9)Type coercion
+// type coercion happens whenever an operator is dealing with two values that have different types
+console.log('I am' + 23 + 'years old');  //the plus operator triggers the coercion to STRINGS
+// so whenever there is an operation between a string and a number,the number will be converted to a string.
+//imp note-actually not all the operators do type coercion to String
+console.log('23' - '10' - 3);  //minus operator actually triggers the opposite conversion so in this case,strings are converted to numbers   op-10
+console.log('23' + '10' + 3)  //the 3 is converted to strings op-23103
+console.log('23' * '2'); //op - 46
 console.log('23' / '2');
-let n = '1' + 1; // '11'
+
+
+let n = '1' + 1; //11
 n = n - 1;
 console.log(n);
-////////////////////////////////////
-// Truthy and Falsy Values
-// 5 falsy values: 0, '', undefined, null, NaN
-console.log(Boolean(0));
-console.log(Boolean(undefined));
-console.log(Boolean('Jatin'));
-console.log(Boolean({}));
-console.log(Boolean(''));
-const money = 100;
-if (money) {
-  console.log("Don't spend it all ;)");
+
+
+//more examples
+//2+3+4+'5' op-95
+// '10' - '4' - '3' -2 +'5'  op - 15
+
+//10) Truthy and Falsy values
+ // so,falsy values are values that are not exactly false,but will become false when we try to convert them into booleans nd in js there are only 5 falsy values
+
+ //5 falsy values: 0 ,'' , undefined , null, NaN
+ // EVERYTHING else are our so-called truthy values.so,values that can be converted to true when we attempt to convert them in Boolean
+   console.log(Boolean(0));  //false
+   console.log(Boolean(undefined)); //false
+   console.log(Boolean('jatin'));  // true
+   console.log(Boolean({}));  //true
+   console.log(Boolean('')); //false
+
+const money = 0;      //0 means falsy value so we get op-you should get a job
+if(money) {
+  console.log("DON't spend it all ;");
 } else {
-  console.log('You should get a job!');
+  console.log('you should get a job!');
 }
-let height = 0;
-if (height) {
-  console.log('YAY! Height is defined');
+
+const mooney = 100;      //100 is truthy value so we get op-dont spend it all
+if(mooney) {
+  console.log("DON't spend it all ;");
 } else {
-  console.log('Height is UNDEFINED');
+  console.log('you should get a job!');
 }
-////////////////////////////////////
-// Equality Operators: == vs. ===
-const age = '18';
-if (age === 18) console.log('You just became an adult :D (strict)');
-if (age == 18) console.log('You just became an adult :D (loose)');
-const favourite = Number(prompt("What's your favourite number?"));
+
+// another use case  for this truthy and falsy values is to check if a variable is actually defined or not
+let height; //height is undefined because we dont assing any value to it so,this height variable here in this logical context , will automatically converted to boolean so height is undefined nd undefined is a falsy value
+if(height) {
+  console.log('YAY! height is defined');
+} else {
+  console.log('Height is UNDEFINED')  //op-Height is UNDEFINED
+}
+
+//bug (we can fix this problem using logical operators later)
+// let height = 0; //its falsy value but 0 is a valid no.to assing for a height so its an error in our application
+// if(height) {
+//   console.log('YAY! height is defined');
+// } else {
+//   console.log('Height is UNDEFINED')  //op-YAY! hieght is defined
+// }
+
+
+// 11)Equality operators: == vs === (quite a consfusing topic in js)
+
+const age = 18;
+if(age === 18) console.log('you just became an adult');  //we dont need {} agar if k baad sirf ek hi line likh rahe hoto
+//18 === 18 op-true
+//18 === 19 op-false
+//(===) - strict Equality operator dont do type coercion
+//(==) - loose Equality operator does type coercion
+ // example 18 == '18' op - true
+//this loose equality operator is full of really weird rules and behaviors.so as a genral rule for clean code avoid the lose operator as much as u can .
+
+
+//there is a pretty simple way of getting a value from any webpage,we can do that by using prompt function
+
+const favourite = Number(prompt("what's your favourite number?"))  //value store krne k liye favourite naam ka variable bnaya
 console.log(favourite);
 console.log(typeof favourite);
-if (favourite === 23) { // 22 === 23 -> FALSE
-  console.log('Cool! 23 is an amzaing number!')
-} else if (favourite === 7) {
+
+if(favourite === 23) { // 22 ===23 -> false
+  console.log('cool 23 is an amazing number!')
+
+} else if(favourite === 7) {
   console.log('7 is also a cool number')
-} else if (favourite === 9) {
+}  else if(favourite === 9) {
   console.log('9 is also a cool number')
-} else {
-  console.log('Number is not 23 or 7 or 9')
 }
-if (favourite !== 23) console.log('Why not 23?');
-////////////////////////////////////
-// Logical Operators
+else {
+  console.log('number is not 23 or 7 or 9')
+}
+
+//there must also be an operator which does opposite.(!=)
+if(favourite != 23) console.log('why not 23?')
+  
+
+//12)Boolean logic
+// uses true and false values to solve complex logical problems.
+
+// BASIC BOOLEAN LOGIC: THE AND ,OR & NOT OPERATORS
+
+//13)Logical operators
+
+// const hasDriversLicense = true; // A
+// const hasGoodVision = true; //B
+//
+// console.log(hasDriversLicense && hasGoodVision);  //op-true (result of true nd true = true)
 const hasDriversLicense = true; // A
-const hasGoodVision = true; // B
-console.log(hasDriversLicense && hasGoodVision);
-console.log(hasDriversLicense || hasGoodVision);
-console.log(!hasDriversLicense);
-// if (hasDriversLicense && hasGoodVision) {
-//   console.log('Sarah is able to drive!');
-// } else {
-//   console.log('Someone else should drive...');
-// }
-const isTired = false; // C
-console.log(hasDriversLicense && hasGoodVision && isTired);
-if (hasDriversLicense && hasGoodVision && !isTired) {
-  console.log('Sarah is able to drive!');
+const hasGoodVision = false; //B
+
+console.log(hasDriversLicense && hasGoodVision); //op -false (result of true false = false)
+console.log(hasDriversLicense  || hasGoodVision);//op- true (or operator)
+console.log(!hasDriversLicense);//op-false (nor operator)
+
+
+
+if (hasDriversLicense && hasGoodVision) {
+  console.log('jatin is able to drive');
+
 } else {
-  console.log('Someone else should drive...');
+  console.log('someone else should drive'); //op-someone else should drive because hasgoodvision is not true
 }
 */
+//
